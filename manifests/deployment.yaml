@@ -22,7 +22,7 @@ spec:
       containers:
         - image: gcr.io/unity-ads-workshop-test/woltsu-unity-kubernetes-workshop:latest
           name: woltsu-unity-kubernetes-workshop
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           resources:
             requests:
               cpu: 0.1
