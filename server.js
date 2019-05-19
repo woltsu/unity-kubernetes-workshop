@@ -12,7 +12,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // Controllers
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   return res.status(200).send('Hello, world!')
 })
 
