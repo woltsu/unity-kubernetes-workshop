@@ -2,26 +2,26 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   namespace: workshop
-  name: unity-workshop-nodejs-app
+  name: woltsu-unity-kubernetes-workshop
   labels:
-    app: unity-workshop-nodejs-app
+    app: woltsu-unity-kubernetes-workshop
 
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   selector:
     matchLabels:
-      app: unity-workshop-nodejs-app
+      app: woltsu-unity-kubernetes-workshop
 
   template:
     metadata:
       labels:
-        app: unity-workshop-nodejs-app
+        app: woltsu-unity-kubernetes-workshop
       annotations:
     spec:
       containers:
-        - image: gcr.io/unity-ads-workshop-test/unity-workshop-nodejs-app:latest
-          name: unity-workshop-nodejs-app
+        - image: gcr.io/unity-ads-workshop-test/woltsu-unity-kubernetes-workshop:latest
+          name: woltsu-unity-kubernetes-workshop
           imagePullPolicy: IfNotPresent
           resources:
             requests:

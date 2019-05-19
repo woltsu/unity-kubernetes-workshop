@@ -2,8 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   labels:
-    app: unity-workshop-nodejs-app
-  name: unity-workshop-nodejs-app
+    app: woltsu-unity-kubernetes-workshop
+  name: woltsu-unity-kubernetes-workshop
   namespace: workshop
 
 spec:
@@ -14,4 +14,4 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: unity-workshop-nodejs-app
+    app: woltsu-unity-kubernetes-workshop
