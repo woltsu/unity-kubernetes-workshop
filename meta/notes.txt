@@ -2,3 +2,14 @@ Kubernetes
 ----------
 
 - Platform for running your containers
+
+Pipeline
+________
+
+- GitHub webhook notifies Jenkins server
+- Jenkins:
+  - Builds the image
+  - Runs "tests"
+  - Pushes image to google cloud
+  - Creates a new deployment and a service from the defined manifests
+  - https://github.com/rasmus-unity/shared-jenkinslib-example/blob/master/vars/Pipeline.groovy
