@@ -1,1 +1,1 @@
-docker build -t ${image} .
+docker build -t ${image}:${GIT_COMMIT} .
