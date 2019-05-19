@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: workshop
+  name: unity-workshop-nodejs-app
+  labels:
+    app: unity-workshop-nodejs-app
+
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unity-workshop-nodejs-app
+
+  template:
+    metadata:
+      labels:
+        app: unity-workshop-nodejs-app
+      annotations:
+    spec:
+      containers:
+        - image: gcr.io/unity-ads-workshop-test/unity-workshop-nodejs-app:latest
+          name: unity-workshop-nodejs-app
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 0.1
+              memory: 128Mi
+            limits:
+              cpu: 0.5
+              memory: 1024Mi
+          env:
+            - name: TEST
+              value: Test env value
+
+      nodeSelector:
+        service: workshop

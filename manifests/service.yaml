@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: unity-workshop-nodejs-app
+  name: unity-workshop-nodejs-app
+  namespace: workshop
+
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: unity-workshop-nodejs-app

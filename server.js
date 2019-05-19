@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 // Controllers
 app.get('/', (_, res) => {
-  return res.status(200).send('Hello, world!')
+  return res.status(200).send(`Hello, world! Env value: ${ process.env.TEST }`)
 })
 
 // Create server
